@@ -149,6 +149,127 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/08/08/Printf函数副词参数列表/">Printf函数副词参数列表</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-08-08
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="General"><a href="#General" class="headerlink" title="General"></a>General</h2><ul>
+<li><code>%v</code> 以默认的方式打印变量的值</li>
+<li><code>%T</code> 打印变量的类型<h2 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h2></li>
+<li><code>%d</code> 整型的十进制表示</li>
+<li><code>%+d</code> 带符号的整型,<code>fmt.Printf(&quot;%+d&quot;,255)</code>输出+255</li>
+<li><code>%q</code> 打印单引号</li>
+<li><code>%o</code> 不带0的八进制</li>
+<li><code>%#o</code> 带0的八进制</li>
+<li><code>%x</code> 小写的十六进制</li>
+<li><code>%X</code> 大写的十六进制</li>
+<li><code>%#x</code> 带0x的十六进制</li>
+<li><code>%U</code> 打印Unicode字符</li>
+<li><code>%#U</code> 打印带字符的Unicode</li>
+<li><code>%b</code> 打印整型的二进制<h2 id="Integet-width"><a href="#Integet-width" class="headerlink" title="Integet width"></a>Integet width</h2></li>
+<li><code>%5d</code> 表示该整型最大的长度为5</li>
+<li><code>%-5d</code> 则相反,打印结果会自动左对齐</li>
+<li><code>%05d</code> 会在数字前面补0<h2 id="Fload"><a href="#Fload" class="headerlink" title="Fload"></a>Fload</h2></li>
+<li><code>%f(=%.6f)</code> 6位小数点</li>
+<li><code>%e(=%.6e)</code> 6位小数点(科学计数法)</li>
+<li><code>%g</code> 用最少的数字来表示</li>
+<li><code>%.3g</code> 最多3位数字来表示</li>
+<li><code>%.3f</code> 最多3位小数来表示<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2></li>
+<li><code>%s</code> 正常输出字符串</li>
+<li><code>%q</code> 字符串带双引号,字符串中的引号带转义符</li>
+<li><code>%#q</code> 字符串带反引号,如果字符串内有反引号,就用双引号代替</li>
+<li><code>%x</code> 将字符串转换为小写的16进制格式</li>
+<li><code>%X</code> 将字符串转换为大写的16进制格式</li>
+<li><code>% x</code> 带空格的16进制格式<h2 id="String-width"><a href="#String-width" class="headerlink" title="String width"></a>String width</h2></li>
+<li><code>%5s</code> 最小宽度为5</li>
+<li><code>%-5s</code> 最小宽度为5(左对齐)</li>
+<li><code>%.5s</code> 最大宽度为5</li>
+<li><code>%-5.7</code> 最小宽度为5,最大宽度为7(左对齐)</li>
+<li><code>%5.3</code> 如果宽度大于3则截断</li>
+<li><code>%05s</code> 如果宽度小于5,就会在字符串前面补0<h2 id="Struct"><a href="#Struct" class="headerlink" title="Struct"></a>Struct</h2></li>
+<li><code>%v</code> 正常打印.比如:<code>{sam{12345 67890}}</code></li>
+<li><code>%+v</code> 带字段名称,比如:<code>{name:sam phone:{mobile:12345 office:67890}}</code></li>
+<li><code>%#v</code> 用Go的语法打印,例如:<code>main.People{name:&quot;sam&quot;,phone:main.Phone{mobile:&quot;12345&quot;,office:&quot;67890&quot;}}</code><h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2></li>
+<li><code>%t</code> 打印布尔值true或者false<h2 id="Pointer"><a href="#Pointer" class="headerlink" title="Pointer"></a>Pointer</h2></li>
+<li><code>%p</code> 带0x的指针</li>
+<li><code>%#p</code> 不带0x的指针</li>
+</ul>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/2018/08/07/《go语言圣经学习笔记》第三章/">《go语言圣经学习笔记》第三章</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-08-07
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/08/01/go语言圣经学习笔记一/">go语言圣经学习笔记一</a>
         
       </h1>
@@ -172,7 +293,7 @@
         
 
         
-          <h1 id="go语言圣经学习笔记1"><a href="#go语言圣经学习笔记1" class="headerlink" title="go语言圣经学习笔记1"></a>go语言圣经学习笔记1</h1><h2 id="const-（来自利萨如图形问题）"><a href="#const-（来自利萨如图形问题）" class="headerlink" title="const （来自利萨如图形问题）"></a>const （来自利萨如图形问题）</h2><ul>
+          <h2 id="const-（来自利萨如图形问题）"><a href="#const-（来自利萨如图形问题）" class="headerlink" title="const （来自利萨如图形问题）"></a>const （来自利萨如图形问题）</h2><ul>
 <li>虽然一个常量可以有任意一个确定的基础类型，例如int或float64或者time.Duration这样命名的基础类型，但是许多常量并没有一个明确的基础类型，编译器为这些没有明确的基础类型的数字常量提供了比基础类型更高精度的算术运算，你可以认为至少有256bit的运算精度。</li>
 <li>通过延迟明确常量的具体类型，<strong>无类型的常量不仅可以提供更高的运算精度，而且可以用于更多的表达式而无需显式的类型转换</strong><h2 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h2><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3></li>
 <li>如果一个函数在函数内部定义,那么它只在函数内部有效.如果在函数外部定义,那么当前包的所有文件都可以访问.</li>
