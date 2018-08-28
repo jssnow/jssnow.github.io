@@ -149,6 +149,52 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/08/28/Elasticsearch-IK分词同义词配置-版本6-x/">Elasticsearch IK分词同义词配置(版本6.x)</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-08-28
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>网上修改<code>elasticsearch.yml</code>文件配置同义词针对的是5.x版本,在6.0以上已经不行了,在这里记录一下我的配置过程.<br> <strong>1.创建一个索引</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT http://localhost:9200/index</span><br></pre></td></tr></table></figure></p>
+<p> <strong>2.关闭索引</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/index/_close&apos;</span><br></pre></td></tr></table></figure></p>
+<p> <strong>3.创建synonyms.txt 文件,保存为utf-8格式,并注意文件的权限</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">配置的格式为(前面是同义词,后面是实际存在的词):</span><br><span class="line">china,中国</span><br></pre></td></tr></table></figure></p>
+<p> <strong>4.配置ik同义词</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT http://localhost:9200/index/_settings -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno.filter&quot; : [</span><br><span class="line">       &quot;my_synonym_filter&quot;</span><br><span class="line">     ],</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno.tokenizer&quot; : &quot;ik_max_word&quot;,</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno.type&quot; : &quot;custom&quot;,</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno_smart.filter&quot; : [</span><br><span class="line">       &quot;my_synonym_filter&quot;</span><br><span class="line">     ],</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno_smart.tokenizer&quot; : &quot;ik_smart&quot;,</span><br><span class="line">     &quot;index.analysis.analyzer.ik_syno_smart.type&quot; : &quot;custom&quot;,</span><br><span class="line">     &quot;index.analysis.filter.my_synonym_filter.synonyms_path&quot; : &quot;synonyms.txt&quot;,</span><br><span class="line">     &quot;index.analysis.filter.my_synonym_filter.type&quot; : &quot;synonym&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>以上配置定义了 ik_syno 和 ik_syno_smart 这两个新的 analyzer，分别对应 IK 的 ik_max_word 和 ik_smart 两种分词策略,到此同义词配置已经完成，重启ES即可，搜索时指定分词为ik_syno或ik_syno_smart.<br> <strong>5.创建mapping映射</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;properties&quot;: &#123;</span><br><span class="line">		&quot;content&quot;: &#123;</span><br><span class="line">			&quot;type&quot;: &quot;text&quot;,</span><br><span class="line">			&quot;analyzer&quot;: &quot;ik_max_word&quot;,</span><br><span class="line">			&quot;search_analyzer&quot;: &quot;ik_max_word&quot;</span><br><span class="line">		&#125;,</span><br><span class="line">		&quot;title&quot;: &#123;</span><br><span class="line">			&quot;type&quot;: &quot;text&quot;,</span><br><span class="line">			&quot;analyzer&quot;: &quot;ik_syno&quot;,</span><br><span class="line">			&quot;search_analyzer&quot;: &quot;ik_syno&quot;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>content</code> 字段使用 ik_max_word 作为 analyzer没有同义词策略,<code>title</code> 字段使用 ik_syno 作为 analyzer 有同义词策略,分别测试即可.</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/08/08/Printf函数副词参数列表/">Printf函数副词参数列表</a>
         
       </h1>
