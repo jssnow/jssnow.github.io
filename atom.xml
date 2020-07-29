@@ -4,13 +4,13 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">JiangHongJie&#39;s Blog</title>
     <subtitle type="html">姜红杰的博客</subtitle>
-    <updated>2020-07-29T22:20:29&#43;08:00</updated>
-    <id>https://jssnow.github.io/</id>
-    <link rel="alternate" type="text/html" href="https://jssnow.github.io/" />
-    <link rel="self" type="application/atom&#43;xml" href="https://jssnow.github.io/atom.xml" />
+    <updated>2020-07-29T22:47:42&#43;08:00</updated>
+    <id>https://vlrog.gitee.com/</id>
+    <link rel="alternate" type="text/html" href="https://vlrog.gitee.com/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://vlrog.gitee.com/atom.xml" />
     <author>
             <name>姜红杰</name>
-            <uri>https://jssnow.github.io/</uri>
+            <uri>https://vlrog.gitee.com/</uri>
             
                 <email>jhj767658181@gmail.com</email>
             </author>
@@ -18,13 +18,13 @@
     <generator uri="https://gohugo.io/" version="0.74.3">Hugo</generator>
         <entry>
             <title type="text">Golang Printf函数副词参数列表</title>
-            <link rel="alternate" type="text/html" href="https://jssnow.github.io/posts/golang-printf%E5%87%BD%E6%95%B0%E5%89%AF%E8%AF%8D%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8/" />
-            <id>https://jssnow.github.io/posts/golang-printf%E5%87%BD%E6%95%B0%E5%89%AF%E8%AF%8D%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8/</id>
+            <link rel="alternate" type="text/html" href="https://vlrog.gitee.com/posts/golang-printf%E5%87%BD%E6%95%B0%E5%89%AF%E8%AF%8D%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8/" />
+            <id>https://vlrog.gitee.com/posts/golang-printf%E5%87%BD%E6%95%B0%E5%89%AF%E8%AF%8D%E5%8F%82%E6%95%B0%E5%88%97%E8%A1%A8/</id>
             <updated>2020-07-29T22:13:13&#43;08:00</updated>
             <published>2020-07-27T15:03:54&#43;00:00</published>
             <author>
                     <name>姜红杰</name>
-                    <uri>https://jssnow.github.io/</uri>
+                    <uri>https://vlrog.gitee.com/</uri>
                     <email>jhj767658181@gmail.com</email>
                     </author>
             <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights><summary type="html">Printf函数副词参数列表 General %v 以默认的方式打印变量的值 %T 打印变量的类型 Integer %d 整型的十……</summary>
@@ -108,7 +108,7 @@
                             
                             
                             
-                                <category scheme="https://jssnow.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" term="编程语言" label="编程语言" />
+                                <category scheme="https://vlrog.gitee.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" term="编程语言" label="编程语言" />
                             
                         
                     
@@ -118,7 +118,7 @@
                             
                             
                             
-                                <category scheme="https://jssnow.github.io/tags/golang/" term="Golang" label="Golang" />
+                                <category scheme="https://vlrog.gitee.com/tags/golang/" term="Golang" label="Golang" />
                             
                         
                     
